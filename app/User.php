@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use Uuid;
 class User extends Authenticatable
 {
     use Notifiable;
@@ -14,9 +14,17 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+     // Disable Auto_Incrementing Values For The Model in The ID Column
+    public $incrementing = false;
+    protected static function boot()
+    {
+        parent::boot();
+        static::creating(function ($model) {
+            $model->{$model->getKeyName()} = Uuid::generate()->string;
+        });
+    }
+    
+    protected $fillable = ['student_id', 'first', 'last', 'email', 'password', 'agreed', 'type'];
 
     /**
      * The attributes that should be hidden for arrays.
