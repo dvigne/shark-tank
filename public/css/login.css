@@ -2,16 +2,39 @@ html {
   height: 100%;
   width: 100%;
 }
-
 body {
   height: 100%;
   width:100%;
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/img/login.jpg') no-repeat center center fixed;
+  background: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.5) ), url('/img/login.jpg') no-repeat center center fixed;
   background-position: center;
   background-size: cover;
 }
-
 .panel-heading {
   text-align: center;
   font-weight: bold;
+}
+.navbar-default {
+  border-radius: 0px;
+  background: none;
+  /*border-color: rgba(255, 255, 255, 0.3);
+  border-width: 0 0 1px;*/
+  border-color: none;
+  border-width: 0;
+}
+.nav-text{
+  color: rgb(199, 194, 194) !important;
+}
+.nav-text a {
+  color: rgb(199, 194, 194) !important;
+  transition: color .2s ease-in-out;
+}
+.nav-text a:hover {
+  color: rgb(150, 150, 150) !important;
+}
+.login-box {
+  margin-top:5%;
+}
+.svg {
+  padding: 0px;
+  margin: 10px 0 0 10px !important;
 }

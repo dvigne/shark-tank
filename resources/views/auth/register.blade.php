@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
-                <div class="panel-heading">Welcome! Please signup below with the appropriate credentials. If you already have an account, please <a href="{{ url('/login')}}">login here.</a></div>
+                <div class="panel-heading">Welcome! Please signup below with the appropriate credentials. If you already have an account, please <a href="{{ url('/login')}}">login here. </a></div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
@@ -54,7 +54,7 @@
                             <label for="student_id" class="col-md-4 control-label">Student ID: </label>
 
                             <div class="col-md-6">
-                                <input id="student_id" type="email" class="form-control" name="student_id" value="{{ old('student_id') }}" required>
+                                <input id="student_id" type="text" class="form-control" name="student_id" value="{{ old('student_id') }}" required>
 
                                 @if ($errors->has('student_id'))
                                     <span class="help-block">

@@ -23,8 +23,8 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
+        <nav class="navbar navbar-default navbar-affix-top">
+            <div class="container" style="width:100%;">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -36,8 +36,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                    <a class="navbar-brand svg" href="{{ url('/') }}">
+                        <object style="height: 100px;" type="image/svg+xml" data="/img/phoenix_grey.svg">Florida Polytechnic University</object>
                     </a>
                 </div>
 
@@ -48,7 +48,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right nav-text">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
