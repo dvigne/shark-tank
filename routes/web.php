@@ -14,3 +14,7 @@
 Route::get('/', 'Auth\LoginController@showLoginForm');
 
 Auth::routes();
+
+Route::group(['middleware' => 'auth'],function() {
+  Route::get("/dashboard", "DashboardController@index");
+});
