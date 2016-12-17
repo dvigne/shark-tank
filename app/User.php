@@ -23,8 +23,8 @@ class User extends Authenticatable
             $model->{$model->getKeyName()} = Uuid::generate()->string;
         });
     }
-    
-    protected $fillable = ['student_id', 'first', 'last', 'email', 'password', 'agreed', 'type'];
+
+    protected $fillable = ['student_id', 'first', 'last', 'email', 'password', 'agreed', 'role'];
 
     /**
      * The attributes that should be hidden for arrays.
