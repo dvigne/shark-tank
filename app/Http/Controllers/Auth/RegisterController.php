@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.
@@ -47,10 +47,17 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $messages = [
+          'agreed.accepted' => "Please Accepted The Terms and Conditions Set Forth Above",
+          'student_id.*' => 'Please Enter a Valid Student ID'
+        ];
         return Validator::make($data, [
-            'name' => 'required|max:255',
+            'student_id' => 'required|max:255|unique:users',
+            'first' => 'required|max:255',
+            'last' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'agreed' => 'accepted',
         ]);
     }
 
@@ -63,9 +70,13 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'student_id' => $data['student_id'],
+            'first' => $data['first'],
+            'last' => $data['last'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'agreed' => $data['agreed'],
+            'role' => 'student',
         ]);
     }
 }
