@@ -40,3 +40,7 @@
   height: 400px !important;
   background-color: white;
 }
+#pieChart {
+  margin-left: 13.5%;
+  padding-bottom: 1em;
+}

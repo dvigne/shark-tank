@@ -119,12 +119,11 @@
               responsive: true,
               cutoutPercentage: 50,
               maintainAspectRatio: true,
-              animateRotate: true,
-          },
-          animation: {
-            easing: "easeOutBounce",
-            numSteps: 100,
-            animateScale: false,
+              title: {
+                  display: true,
+                  text: 'Grade Breakdown',
+                  fontSize: 15,
+              },
           }
       };
       var pieChart = new Chart(pieCanvas, pieConfig);
